@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ForgeWay - AI Brand Workforce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --base-bg: #F5F5F3;
+        --aurora-1: #9bc400; 
+        --aurora-2: #8076a3; 
+        --aurora-3: #f9c5bd; 
+        --aurora-4: #7c677f; 
+        --title-color: #FFFFFF;
+        --body-color: #84593D; 
+        --accent: #8076a3;
+        --glass-bg: rgba(255, 255, 255, 0.1); 
+        --glass-border: rgba(255, 255, 255, 0.2);
+        
+        /* Reality Lab Metallic Theme */
+        --emerald-metallic: #0A5C44;
+        --emerald-glow: rgba(10, 92, 68, 0.5);
+      }
+
+      .dark {
+        --base-bg: #020617;
+        --aurora-1: #0f172a;
+        --aurora-2: #1e1b4b;
+        --aurora-3: #312e81;
+        --aurora-4: #1e1b4b;
+        --glass-bg: rgba(0, 0, 0, 0.4);
+        --glass-border: rgba(255, 255, 255, 0.1);
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      @keyframes aurora-flow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .aurora-bg {
+        background: linear-gradient(-45deg, var(--aurora-1), var(--aurora-2), var(--aurora-3), var(--aurora-4));
+        background-size: 400% 400%;
+        animation: aurora-flow 20s ease-in-out infinite;
+      }
+
+      @keyframes perception-aurora {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .perception-screen {
+        background: linear-gradient(-45deg, #050808, #0A5C44, #000000, #021a12);
+        background-size: 300% 300%;
+        animation: perception-aurora 15s ease infinite;
+        position: relative;
+      }
+
+      /* Digital Grid Overlay for Reality Lab */
+      .perception-screen::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(rgba(10, 92, 68, 0.05) 1px, transparent 1px), 
+                          linear-gradient(90deg, rgba(10, 92, 68, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .glass {
+        background: var(--glass-bg);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid var(--glass-border);
+      }
+
+      .metallic-emerald {
+        background: linear-gradient(145deg, #0d7c5b, #074735);
+        box-shadow: 0 10px 30px -10px var(--emerald-glow), inset 0 1px 1px rgba(255,255,255,0.2);
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+
+      @keyframes emerald-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(10, 92, 68, 0.6); transform: scale(1); }
+        70% { box-shadow: 0 0 0 20px rgba(10, 92, 68, 0); transform: scale(1.02); }
+        100% { box-shadow: 0 0 0 0 rgba(10, 92, 68, 0); transform: scale(1); }
+      }
+
+      .pulse-emerald {
+        animation: emerald-pulse 4s infinite ease-in-out;
+      }
+
+      .hide-scrollbar::-webkit-scrollbar { display: none; }
+      .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      .title-text { color: var(--title-color) !important; }
+      .body-text { color: var(--body-color) !important; }
+
+      .glass-emerald {
+        background: rgba(10, 92, 68, 0.03);
+        backdrop-filter: blur(30px);
+        border: 1px solid rgba(10, 92, 68, 0.15);
+      }
+
+      .text-glow-emerald {
+        text-shadow: 0 0 10px rgba(10, 92, 68, 0.8);
+      }
+
+      @keyframes flicker {
+        0% { opacity: 1; }
+        5% { opacity: 0.8; }
+        10% { opacity: 1; }
+        15% { opacity: 0.9; }
+        25% { opacity: 1; }
+        100% { opacity: 1; }
+      }
+
+      .flicker {
+        animation: flicker 4s infinite;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

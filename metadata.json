@@ -1,0 +1,7 @@
+{
+  "name": "ForgeWay",
+  "description": "An AI-powered brand automation platform for startups to generate names, logos, marketing content, and sentiment analysis.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
